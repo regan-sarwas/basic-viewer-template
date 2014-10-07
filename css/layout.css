@@ -8,7 +8,7 @@ html,body {
 }
 /*The image specified for the body is used to apply the gradient background to the entire page*/
 body {
-  font-family:"helvetica neue", helvetica, arial, sans-serif;
+  font-family:"frutiger", Fallback, sans-serif;
   color:#333;
   margin:0px;
   padding:0px;
@@ -79,6 +79,81 @@ background-color:#ddd;
 .esriPrint{
   padding:0px !important;
 }
+/*
+ * Frutiger Font
+ */
+@font-face {
+    font-family: 'frutiger';
+    src: url('../fonts/FrutigerLTStd-Roman.woff') format('woff'),
+    url('../fonts/FrutigerLTStd-Roman.otf') format('truetype');
+}
+
+@font-face {
+    font-family: 'frutiger-bold';
+    src: url('../fonts/FrutigerLTStd-Bold.woff') format('woff'),
+    url('../fonts/FrutigerLTStd-Bold.otf') format('truetype');
+}
+
+/*
+ * Banner Area
+ */
+#banner {
+    height:115px;
+    width: 100%;
+    background:#000000;
+    color:#fff;
+    margin:0;
+    overflow:hidden;
+}
+
+#bannerHeaderText{
+    padding-top:45px;
+    padding-left:20px;
+    float:left;
+}
+
+#bannerTitle {
+    font-family: 'frutiger-bold', sans-serif;
+    font-size:2.2em;
+    font-weight:bold;
+    text-align:left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow:ellipsis;
+    margin:0px;
+    color:White;
+}
+
+#bannerSubtitle {
+    font-family: 'frutiger', sans-serif;
+    font-size:1.2em;
+    margin:0px;
+    overflow: hidden;
+    font-weight:normal;
+    color: #C5D5D5;
+}
+
+#bannerLogoArea{
+    float:right;
+    padding-top:20px;
+    padding-right:20px;
+}
+
+#bannerOrganizationText {
+    font-family: 'frutiger', sans-serif;
+    float:left;
+    padding-right: 10px;
+    padding-top:15px;
+    text-align:right;
+    font-size:1.2em;
+}
+#bannerLogo{
+    border:none;
+    outline:none;
+    float:right;
+    padding-left: 10px;
+}
 /*The main window is the box that contains the map, tools and left panel.*/
 #mainWindow{
   border:solid 1px #999;
@@ -106,6 +181,10 @@ background-color:#ddd;
   padding:0px;
   width:0px;
   border-right:solid 1px #999;
+  font-size:14px;
+}
+.esriLegendService {
+    padding-bottom:15px;
 }
 #leftPane a{
   color:#336699;
@@ -127,20 +206,22 @@ background-color:#ddd;
 }
 .esriScalebar{
   padding-left:15px;
+  font-family:'frutiger', sans-serif;
+  font-size:14px;
 }
 /*styles for the top toolbar and buttons*/
 #toolbarContainer_bv{
-  overflow:visible;
+  overflow:hidden;
   width:100% !important;
   padding:0px !important;
   height:34px;
   margin:0;
   color:#fff;
+  background-color:#908D7C;
 }
 /*override claro background and other props*/
 #toolbarContainer_bv .dijitToolbar {
   height:100%;
-  overflow: visible;
 }
 
 .claro .dijitButton .dijitButtonNode, .claro .dijitDropDownButton .dijitButtonNode, .claro .dijitComboButton .dijitButtonNode, .claro .dijitToggleButton .dijitButtonNode{
@@ -155,8 +236,7 @@ background-image:none !important;
   color:#333;
 }
 .claro .dijitToolbar .dijitToggleButtonChecked .dijitButtonNode {
-   color:#333;
-   border-style: solid;
+   color:#908D7C;
 }
 .claro .dijitToolbar .dijitButtonNode{
   color:#fff;
@@ -165,21 +245,33 @@ background-image:none !important;
 /*The top toolbar is split into three sections. */
 #webmap-toolbar-left {
   float: left;
+  overflow:hidden;
+  font-family:'frutiger', sans-serif;
 }
 
 #webmap-toolbar-center {
   float: right;
+  overflow:hidden;
+  font-family:'frutiger', sans-serif;
 }
 
 #webmap-toolbar-right {
   float: right;
+  padding-right: 10px;
   width:250px;
+  font-family:'frutiger', sans-serif;
 }
 #legendButton{
     color:#fff;
+  font-family:'frutiger', sans-serif;
+}
+#legendButton:hover{
+  color:#333;
+  background-color:rgb(231,231,231);
 }
 #detailButton{
     color:#fff;
+    font-family:'frutiger', sans-serif;
 }
 /*Style for company logo added to the map*/
 .logo{
@@ -330,6 +422,7 @@ background-image:none !important;
 }
  td.dijitMenuItemIconCell,td.dijitMenuItemLabel{
   padding:5px 5px !important;
+  font-family:'frutiger', sans-serif;
  }
 .dijitMenuItem{
   padding:10px 10px !important;
@@ -416,14 +509,14 @@ background-image:none !important;
   padding:0px !important;
 } 
 .dojoxFloatingPaneContent{
-  font-family:"helvetica neue", helvetica, arial, sans-serif;
+  font-family:"frutiger", sans-serif;
   font-size:8pt;
   font-weight:bold;
   padding-bottom:4px;
 }
 .dojoxFloatingPaneTitle{
   color:#fff;
-  font-family:"helvetica neue", helvetica, arial, sans-serif;
+  font-family:"frutiger", sans-serif;
   font-size:12pt;
   font-weight:bold;
   width:100%;
@@ -460,7 +553,7 @@ background-image:none !important;
 /*remove the botttom border from the measurement tools result label*/
 .resultLabel{
   border-bottom:none !important;
-  font-family:"helvetica neue", helvetica, arial, sans-serif;
+  font-family:"frutiger", sans-serif;
 }
 
 
@@ -518,7 +611,20 @@ background-image:none !important;
 }
 /*Specify font for the popup window*/
 .esriPopup{
-  font-family:"helvetica neue",helvetica,arial,sans-serif;
+  font-family:"frutiger", sans-serif;
+  font-size:14px;
+}
+
+.esriPopupWrapper .titlePane {
+  background-color:black;
+}
+
+.esriPopup .contentPane {
+  background-color:rgb(231,231,231);
+}
+
+.esriPopup .actionsPane {
+  background-color:rgb(231,231,231);
 }
 
 /*.esriPopup .pointer.top {
@@ -611,4 +717,5 @@ background-image:none !important;
 
 .customMenuPopup{
   overflow-y:auto !important;
+  border:none;
 }

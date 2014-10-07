@@ -56,17 +56,17 @@
         i18n = dojo.i18n.getLocalization("esriTemplate","template");
         var  defaults = {
         //The ID for the map from ArcGIS.com
-        webmap: "f5b13dbed07c46cdb783cf361833aa6b",
+        webmap: "83b84a63d3f34541a27563f07638f374",
         //Modify this to point to your sharing service URL if you are using the portal
-        sharingurl: "http://www.arcgis.com",//for example: "http://www.arcgis.com",
+        sharingurl: "http://gisportal.nps.gov/arcgis",//for example: "http://www.arcgis.com",
         //The id for the web mapping application item that contains configuration info - in most
         ////When editing you need to specify a proxyurl (see below) if the service is on a different domain
         //Specify a proxy url if you will be editing, using the elevation profile or have secure services or web maps that are not shared with everyone.
-        proxyurl: "",
+        proxyurl: "http://gisportal.nps.gov/arcgis",
         //cases this will be null.
         appid: "",
         //set to true to display the title
-        displaytitle: true,
+        displaytitle: false,
         //Enter a title, if no title is specified, the webmap's title is used.
         title: "",
         //Enter a description for the application. This description will appear in the left pane
@@ -75,26 +75,26 @@
         //specify an owner for the app - used by the print option. The default value will be the web map's owner
         owner: '',
         //Specify a color theme for the app. Valid options are gray,blue,purple,green and orange
-        theme: 'gray',
+        theme: 'nps',
         //Optional tools - set to false to hide the tool
         //set to false to hide the zoom slider on the map
-        displayslider: true,
+        displayslider: false,
         displaymeasure: true,
         displaybasemaps: true,
-        displayoverviewmap: true,
-        displayeditor: true,
+        displayoverviewmap: false,
+        displayeditor: false,
         displaylegend: true,
-        displaysearch: true,
+        displaysearch: false,
         displaylayerlist: true,
-        displaybookmarks: true,
+        displaybookmarks: false,
         displaydetails: true,
-        displaytimeslider: true,
-        displayprint: true,
-        displayprintlegend: false,
+        displaytimeslider: false,
+        displayprint: false,
+        displayprintlegend: true,
         displayeditortoolbar: false,
         displaymapwidgets:false, //deprecated. After the June 2014 release set displayHome and displayLocate instead
         home: true,
-        locate: true,
+        locate: false,
         //i18n.viewer.main.scaleBarUnits,
         //The elevation tool uses the  measurement tool to draw the lines. So if this is set
         //to true then displaymeasure needs to be true too. NOTE: THis tool is deprecated and should no 
@@ -104,7 +104,7 @@
         //This option is used when the elevation chart is displayed to control what is displayed when users mouse over or touch the chart. When true, elevation gain/loss will be shown from the first location to the location under the cursor/finger.
         showelevationdifference: false,
         displayscalebar: true,
-        displayshare: true,
+        displayshare: false,
         //Set to true to display the left panel on startup. The left panel can contain the legend, details and editor. Set to true to
         //hide left panel on initial startup. 2
         leftPanelVisibility: true,
@@ -163,7 +163,7 @@
           text: ''
         },
         //specify the width of the panel that holds the editor, legend, details
-        leftpanewidth: 228,
+        leftpanewidth: 300,
         //Restrict the map's extent to the initial extent of the web map. When true users
         //will not be able to pan/zoom outside the initial extent.
         constrainmapextent: false,
@@ -171,7 +171,7 @@
         //in the lower right corner of the map. If nothing is specified then the esri logo will appear.
         customlogo: {
           image: '',
-          link: ''
+          link: 'http://www.nps.gov/bela'
         },
         //embed = true means the margins will be collapsed to just include the map no title or links
         embed: false
@@ -191,6 +191,23 @@
   <body class="claro">
     <div id="bc" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:false"
     style="width:100%; height:100%;padding:0;">
+      <!--Banner Section-->
+      <div id="banner" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" style="height:115px;">
+        <div id="bannerHeaderText" style="max-width:1553px;">
+          <h1 id="bannerTitle">Bering Land Bridge National Preserve</h1>
+          <h2 id="bannerSubtitle">A Bridge to the Past, Present, and Future</h2>
+        </div>
+        <div id="bannerLogoArea">
+          <div id="bannerOrganizationText">
+            Alaska Region<br/>
+            National Park Service<br/>
+            U.S. Department of the Interior<br/>
+          </div>
+          <div id="bannerLogo">
+            <img src="images/ArrowheadNoBackground.png" height="75" alt="National Park Service Arrowhead">
+          </div>
+        </div>
+      </div>
       <!-- Header Section-->
       <div id="header" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
         <!--Title dyanmically generated -->
@@ -210,7 +227,7 @@
         <div data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline',gutters:false"
         style="width:100%;height:100%;padding:0;">
           <!-- Toolbar (Search Basemap Measure)-->
-          <div id="toolbarContainer_bv" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"top"'>
+          <div id="toolbarContainer_bv" data-dojo-type="dijit.layout.ContentPane" data-dojo-props='region:"top"' style="font-size:14px;">
             <div data-dojo-type="dijit.Toolbar">
               <div id="webmap-toolbar-left">
                 <!--Toolbar buttons (Legend, Details, Edit) created dynamically-->
