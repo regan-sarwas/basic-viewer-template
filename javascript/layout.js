@@ -484,7 +484,6 @@ function initUI(response) {
         var cp = new dijit.layout.ContentPane({
             id: 'leftPaneHeader',
             region: 'top',
-            style: 'height:10px;',
             content: esri.substitute({
                 close_title: i18n.panel.close.title,
                 close_alt: i18n.panel.close.label

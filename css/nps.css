@@ -8,12 +8,13 @@ body {
 }
 /*override claro background and other props*/
 #toolbarContainer_bv .dijitToolbar {
-  /*background:url(../images/nps/toolbar_bg.png) repeat-x #545454;*/
+  /* background:url(../images/nps/toolbar_bg.png) repeat-x #545454;*/
   background-color:#908D7C;
   background:none;
 }
 /*Measure toggle button*/
 .claro .dijitToolbar .dijitButtonNode:hover {
+  /* background:url(../images/nps/sidebar_header_active_bg.png) repeat-x #CEE1EC; */
   background-color:rgb(231,231,231);
   color:#333;
   border:none;
@@ -30,16 +31,17 @@ body {
 }
 
 .claro .dijitToolbar .dijitToggleButtonChecked .dijitButtonNode {
+  /* background:url(../images/nps/sidebar_header_active_bg.png) repeat-x #CEE1EC; */
   background:none;
   border:none;
   color:white;
 }
 .dojoxFloatingPaneTitle{
-  background:url(../images/nps/toolbar_bg.png) repeat-x #545454;  
+  background:url(../images/nps/toolbar_bg.png) repeat-x #545454;
 }
 
 /*slider background*/
-.esriSimpleSliderVertical .esriSimpleSliderIncrementButton,.esriSimpleSliderVertical .esriSimpleSliderDecrementButton  {
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton ,.esriSimpleSliderVertical .esriSimpleSliderDecrementButton  {
   background:url(../images/nps/toolbar_bg.png) repeat-x #545454;
   border:solid 1px #545454;
 }
@@ -55,18 +57,17 @@ body {
 
 .claro .dijitDialogPaneActionBar .dijitButtonNode{
   background-image:none;
-  background:url(../images/gray/sidebar_header_active_bg.png) repeat-x #CEE1EC;
+  border: solid 1px #545454;
+  background:url(../images/nps/sidebar_header_active_bg.png) repeat-x #CEE1EC;
 }
 .esriBookmarkItem:hover{
   background-color:#CEE1EC;
 }
-/*.esriPopup .pointer.top {
-  background-position: 0 -580px;
-}
-.esriPopup .pointer.topLeft {
-  left: 0px; top: -43px; background-position: 0 -470px; width: 51px; height: 43px;
+
+.claro .dijitSplitContainer-dijitContentPane, .claro .dijitBorderContainer-dijitContentPane{
+    background-color: rgb(231,231,231);
 }
 
-.esriPopup .pointer.topRight {
-  right: 0px; top: -43px; background-position: 0 -652px; width: 51px; height: 43px;
-}*/
+.claro .dijitSplitContainer-child, .claro .dijitBorderContainer-child{
+    border:none;
+}
