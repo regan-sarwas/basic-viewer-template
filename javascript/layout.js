@@ -167,6 +167,8 @@ function createApp() {
         }, 'link2List');
     }
 
+    //Add the unit organization to the NPS header
+    dojo.byId('bannerOrganizationUnit').textContent = configOptions.organization
 
     var itemInfo = configOptions.itemInfo || configOptions.webmap;
 
