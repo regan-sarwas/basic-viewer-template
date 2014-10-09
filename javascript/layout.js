@@ -243,15 +243,14 @@ function createMap(webmapitem) {
 
 
         configOptions.owner = response.itemInfo.item.owner;
-        document.title = configOptions.title || response.itemInfo.item.title;
+        configOptions.title = configOptions.title || response.itemInfo.item.title;
+        configOptions.subtitle = configOptions.subtitle || response.itemInfo.item.snippet;
+        if (configOptions.subtitle == "none") {configOptions.subtitle = "";}
+        document.title = configOptions.title
         //add a title
         if (configOptions.displaytitle === "true" || configOptions.displaytitle === true) {
-            configOptions.title = configOptions.title || response.itemInfo.item.title;
-            dojo.create("p", {
-                id: 'webmapTitle',
-                innerHTML: configOptions.title
-            }, "header");
-            dojo.style(dojo.byId("header"), "height", "38px");
+            dojo.byId('bannerTitle').textContent = configOptions.title
+            dojo.byId('bannerSubtitle').textContent = configOptions.subtitle
         } else if (!configOptions.link1.url && !configOptions.link2.url) {
             //no title or links - hide header
             esri.hide(dojo.byId('header'));
@@ -259,6 +258,9 @@ function createMap(webmapitem) {
             dojo.query("html").addClass("embed");
         }
 
+        if (configOptions.displaytitle && !configOptions.embed) {
+            esri.show(dojo.byId('header'));
+        }
 
         //get the popup click handler so we can disable it when measure tool is active
         clickHandler = response.clickEventHandle;

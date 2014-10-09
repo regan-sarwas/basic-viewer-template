@@ -58,10 +58,6 @@ background-color:#ddd;
   padding:0px !important;
   margin:0px !important;
 }
-#header{
-  padding:0px;
-  overflow:hidden;
-}
 
 #webmapTitle{
   font-family:"gill sans",helvetica,arial,sans-serif;
@@ -97,18 +93,18 @@ background-color:#ddd;
 /*
  * Banner Area
  */
-#banner {
-    height:115px;
-    width: 100%;
+#header {
     background:#000000;
     color:#fff;
+    padding:10px;
     margin:0;
     overflow:hidden;
+    position:relative;
 }
 
 #bannerHeaderText{
-    padding-top:45px;
-    padding-left:20px;
+    padding-top:15px;
+    padding-left:10px;
     float:left;
 }
 
@@ -136,8 +132,7 @@ background-color:#ddd;
 
 #bannerLogoArea{
     float:right;
-    padding-top:20px;
-    padding-right:20px;
+    padding-right:10px;
 }
 
 #bannerOrganizationText {
@@ -441,28 +436,27 @@ background-image:none !important;
 /*#basemapBtn_label + span, #shareButton_label + span, #bookmarkButton_label + span,#layerBtn_label  + span{
   background-position:-53px 53%;
 }*/
-/*Styles for the links to Esri and ArcGIS.com*/
+/*Styles for the links in the header*/
 #nav {
-  float:right;
   position:absolute;
-  right:10px;
-  top:10px;
-  height:100%;
+  left:45%;
+  bottom:-7px;
 }
 #nav a:link,
 #nav a:visited{
+  color:#999;
   padding:5px 5px 4px 5px;
-  color:#666;
   text-decoration:none;
 }
 #nav a:hover{
   text-decoration:underline;
-  color:#444;
+  color:#666;
 }
 #nav ul{
   padding:bottom:5px;
 }
 #nav li {
+  color:#666;
   display:inline;
   padding:0;
   margin:0;
