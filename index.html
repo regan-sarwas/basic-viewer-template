@@ -69,6 +69,8 @@
         displaytitle: false,
         //Enter a title, if no title is specified, the webmap's title is used.
         title: "",
+        //Enter an organization (Park, Network, Region, etc) to appear above National Park Service in Header
+        organization: "Alaska Region",
         //Enter a description for the application. This description will appear in the left pane
         //if no description is entered the webmap description will be used.
         description: "",
@@ -199,7 +201,7 @@
         </div>
         <div id="bannerLogoArea">
           <div id="bannerOrganizationText">
-            Alaska Region<br/>
+            <span id="bannerOrganizationUnit"></span><br/>
             National Park Service<br/>
             U.S. Department of the Interior<br/>
           </div>
