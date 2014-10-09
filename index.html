@@ -65,14 +65,18 @@
         proxyurl: "http://gisportal.nps.gov/arcgis",
         //cases this will be null.
         appid: "",
-        //set to true to display the title
-        displaytitle: false,
+        //set to true to display the title (NPS Banner with title, subtitle, logo, links, etc)
+        displaytitle: true,
         //Enter a title, if no title is specified, the webmap's title is used.
-        title: "",
-        //Enter an organization (Park, Network, Region, etc) to appear above National Park Service in Header
-        organization: "Alaska Region",
-        //Enter a description for the application. This description will appear in the left pane
-        //if no description is entered the webmap description will be used.
+        title: '',
+        //Enter a subtitle, if no subtitle is specified, the webmap's snippet (short summary) is used.
+        //Use the keyword 'none' if you prefer no subtitle
+        subtitle: '',
+        //Enter an organization (Park, Network, Region, etc) to appear above National Park Service in NPS Header
+        organization: 'Alaska Region',
+        //Enter a description for the application. This description will appear in the left (details) pane
+        //if no description is entered the webmap's description will be used.
+        //If both are empty, no details pane (or button) is shown
         description: "",
         //specify an owner for the app - used by the print option. The default value will be the web map's owner
         owner: '',
@@ -193,11 +197,12 @@
   <body class="claro">
     <div id="bc" data-dojo-type="dijit.layout.BorderContainer" data-dojo-props="design:'headline', gutters:false"
     style="width:100%; height:100%;padding:0;">
-      <!--Banner Section-->
-      <div id="banner" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" style="height:115px;">
-        <div id="bannerHeaderText" style="max-width:1553px;">
-          <h1 id="bannerTitle">Bering Land Bridge National Preserve</h1>
-          <h2 id="bannerSubtitle">A Bridge to the Past, Present, and Future</h2>
+      <!-- Header Section-->
+      <div id="header" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'" style='display:none;'>
+        <!--Banner Section-->
+        <div id="bannerHeaderText">
+          <h1 id="bannerTitle"><!-- Title is dynamically generated--></h1>
+          <h2 id="bannerSubtitle"><!-- Subtitle is dynamically generated--></h2>
         </div>
         <div id="bannerLogoArea">
           <div id="bannerOrganizationText">
@@ -209,10 +214,6 @@
             <img src="images/ArrowheadNoBackground.png" height="75" alt="National Park Service Arrowhead">
           </div>
         </div>
-      </div>
-      <!-- Header Section-->
-      <div id="header" data-dojo-type="dijit.layout.ContentPane" data-dojo-props="region:'top'">
-        <!--Title dyanmically generated -->
         <div id="nav" style='display:none;'>
           <!-- links are dynamically generated-->
           <ul>
