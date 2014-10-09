@@ -170,6 +170,11 @@ function createApp() {
     //Add the unit organization to the NPS header
     dojo.byId('bannerOrganizationUnit').textContent = configOptions.organization
 
+    //Hide the banner in embed mode
+    if (configOptions.embed) {
+        esri.hide(dojo.byId('banner'));
+    }
+
     var itemInfo = configOptions.itemInfo || configOptions.webmap;
 
     if (configOptions.gcsextent ) {
