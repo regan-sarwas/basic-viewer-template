@@ -33,14 +33,17 @@ body {
 
 .LocateButton .zoomLocateButton {
   position: absolute;
-  top:165px;
+  top:135px;
   left:20px;
   z-index: 50;
-  background-color: #545454;
+  background-color: #74746A;
+  border:solid 1px #57585A;
+  height:28px;
+  width:28px;
 }
 
 .LocateButton .zoomLocateButton:hover {
-  background-color: #CEE1EC;
+  background-color: #626159;
 }
 
 .notembed{
