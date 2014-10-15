@@ -225,7 +225,7 @@ function createMap(webmapitem) {
             wrapAround180: !configOptions.constrainmapextent,
             showAttribution: true,
             //set wraparound to false if the extent is limited.
-            logo: !configOptions.customlogo.image //hide esri logo if custom logo is provided
+            logo: false //hide the esri logo
         },
         editable: configOptions.displayeditor,
         ignorePopups: false,
