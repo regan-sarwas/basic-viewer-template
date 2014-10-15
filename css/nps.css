@@ -1,17 +1,21 @@
-
 /*The image specified for the body is used to apply the gradient background to the entire page*/
 body {
-  background:url(../images/nps/body_bg.png) repeat-x #666;
+  background-color:#908D7C;
 }
+
 #leftPane {
   background-color:#EEE;
 }
+
+
 /*override claro background and other props*/
 #toolbarContainer_bv .dijitToolbar {
   /* background:url(../images/nps/toolbar_bg.png) repeat-x #545454;*/
   background-color:#908D7C;
   background:none;
 }
+
+
 /*Measure toggle button*/
 .claro .dijitToolbar .dijitButtonNode:hover {
   /* background:url(../images/nps/sidebar_header_active_bg.png) repeat-x #CEE1EC; */
@@ -19,12 +23,15 @@ body {
   color:#333;
   border:none;
 }
+
+
 /*Attribute Inspector button styling (delete buttons)*/
 .esriAttributeInspector div.atiButtons span.dijit span.dijitReset{
   background:url(../images/nps/toolbar_bg.png) repeat #545454;
   color:#fff;
   border: none;
 }
+
 .esriAttributeInspector div.atiButtons span.dijit span.dijitReset:hover{
   background:url(../images/nps/sidebar_header_active_bg.png) repeat-x #CEE1EC;
   color:#000;
@@ -36,21 +43,27 @@ body {
   border:none;
   color:white;
 }
+
 .dojoxFloatingPaneTitle{
   background:url(../images/nps/toolbar_bg.png) repeat-x #545454;
 }
 
+
 /*slider background*/
 .esriSimpleSliderVertical .esriSimpleSliderIncrementButton ,.esriSimpleSliderVertical .esriSimpleSliderDecrementButton  {
-  background:url(../images/nps/toolbar_bg.png) repeat-x #545454;
-  border:solid 1px #545454;
+  /*background:url(../images/nps/toolbar_bg.png) repeat-x #545454;*/
+  background-color:#74746A;
+  border:solid 1px #57585A;
 }
+
+
 /*Identity Manager Dialog*/
 .claro .dijitDialogTitleBar {
   background:url(../images/nps/toolbar_bg.png) repeat-x #545454;
   color:#fff;
   border: solid 1px #545454;
 }
+
 .claro .dijitDialog {
     border: 1px solid #808080;
 }
@@ -60,6 +73,7 @@ body {
   border: solid 1px #545454;
   background:url(../images/nps/sidebar_header_active_bg.png) repeat-x #CEE1EC;
 }
+
 .esriBookmarkItem:hover{
   background-color:#CEE1EC;
 }
