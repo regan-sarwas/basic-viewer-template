@@ -417,12 +417,24 @@ body {
   display:inline-block;
 }
 
+/*Controls highlighting when hovering over any part of the print button (including arrow)*/
 .claro .dijitComboButton:hover{
   background-color:#797666;
   border:none;
   color:white;
 }
+.claro .dijitComboButtonHover .dijitDownArrowButton{
+  background-color:#797666 !important;
+  border:none;
+  color:white;
+}
+.claro .dijitToolbar .dijitComboButtonHover .dijitButtonNode{
+  background-color:#797666 !important;
+  border:none;
+  color:white;
+}
 
+/**/
 .esriLoadingIcon{
   background-image:url(../images/loading_black.gif);
   background-repeat:no-repeat;
