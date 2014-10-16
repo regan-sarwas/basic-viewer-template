@@ -723,8 +723,12 @@ body {
   background-color:#908D7C;
 }
 
-.esriPopup .outerPointer{
+.esriPopup .pointer.bottom, .esriPopup .outerPointer.left, .esriPopup .outerPointer.right{
   background:rgb(231,231,231) !important;	
+}
+
+.esriPopup .pointer.top{
+  background:#908D7C !important;	
 }
 
 .esriPopup .contentPane {
