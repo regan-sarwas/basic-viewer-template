@@ -250,10 +250,11 @@ body {
 
 .claro .dijitButton .dijitButtonNode, .claro .dijitDropDownButton .dijitButtonNode, .claro .dijitComboButton .dijitButtonNode, .claro .dijitToggleButton .dijitButtonNode{
   background-image:none !important;
+  border:none;
 }
 
 .claro .dijitToolbar{
-  padding:0 !important;
+  padding:2px 0 0 0 !important;
 }
 
 /*Measure toggle button*/
@@ -271,6 +272,7 @@ body {
 
 .claro .dijitToolbar .dijitButtonNode{
   color:#fff;
+  border:none;
 }
 
 /*The top toolbar is split into three sections. */
@@ -296,6 +298,7 @@ body {
 #legendButton{
   color:#fff;
   font-family:'frutiger', sans-serif;
+  border:none;
 }
 
 #legendButton:hover{
@@ -415,12 +418,6 @@ body {
 }
 
 .claro .dijitComboButton:hover{
-  background-color:#797666;
-  border:none;
-  color:white;
-}
-
-.claro .dijitButtonContents:hover{
   background-color:#797666;
   border:none;
   color:white;
