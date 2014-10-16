@@ -723,6 +723,10 @@ body {
   background-color:#908D7C;
 }
 
+.esriPopup .outerPointer{
+  background:rgb(231,231,231) !important;	
+}
+
 .esriPopup .contentPane {
   background-color:rgb(231,231,231);
 }
