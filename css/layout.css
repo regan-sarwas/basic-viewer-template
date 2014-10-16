@@ -716,10 +716,11 @@ body {
 .esriPopup{
   font-family:"frutiger", sans-serif;
   font-size:14px;
+  z-index: 75;
 }
 
 .esriPopupWrapper .titlePane {
-  background-color:black;
+  background-color:#908D7C;
 }
 
 .esriPopup .contentPane {
