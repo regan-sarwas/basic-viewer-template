@@ -191,6 +191,7 @@ body {
   width:0px;
   border-right:solid 1px #999;
   font-size:14px;
+  background-color:#EEE;
 }
 
 .esriLegendService {
@@ -233,7 +234,7 @@ body {
   width:100% !important;
   padding:0px !important;
   height:34px;
-  margin:0;
+  margin:0px;
   color:#fff;
   background-color:#908D7C;
   border:none;
@@ -242,10 +243,13 @@ body {
 /*override claro background and other props*/
 #toolbarContainer_bv .dijitToolbar {
   height:100%;
+  /* background:url(../images/nps/toolbar_bg.png) repeat-x #545454;*/
+  background-color:#908D7C;
+  background:none;
 }
 
 .claro .dijitButton .dijitButtonNode, .claro .dijitDropDownButton .dijitButtonNode, .claro .dijitComboButton .dijitButtonNode, .claro .dijitToggleButton .dijitButtonNode{
-background-image:none !important;
+  background-image:none !important;
 }
 
 .claro .dijitToolbar{
@@ -254,11 +258,15 @@ background-image:none !important;
 
 /*Measure toggle button*/
 .claro .dijitToolbar .dijitButtonNode:hover {
-  color:#333;
+  background-color:#797666;
+  border:none;
 }
 
 .claro .dijitToolbar .dijitToggleButtonChecked .dijitButtonNode {
-   color:#908D7C;
+  /* background:url(../images/nps/sidebar_header_active_bg.png) repeat-x #CEE1EC; */
+  background-color:#797666;
+  border:none;
+  color:white;
 }
 
 .claro .dijitToolbar .dijitButtonNode{
@@ -286,19 +294,27 @@ background-image:none !important;
 }
 
 #legendButton{
-    color:#fff;
+  color:#fff;
   font-family:'frutiger', sans-serif;
 }
 
 #legendButton:hover{
-  color:#333;
-  background-color:rgb(231,231,231);
+  background-color:#797666;
+  border:none;
+  color:white;
 }
 
 #detailButton{
-    color:#fff;
-    font-family:'frutiger', sans-serif;
+  color:#fff;
+  font-family:'frutiger', sans-serif;
 }
+
+#detailButton:hover{
+  background-color:#797666; 
+  border:none;
+  color:white;
+}
+
 /*Style for company logo added to the map*/
 .logo{
   bottom:5px;
@@ -399,8 +415,15 @@ background-image:none !important;
 }
 
 .claro .dijitComboButton:hover{
-   color:#333;
-   background-color: #E2EBF2;
+  background-color:#797666;
+  border:none;
+  color:white;
+}
+
+.claro .dijitButtonContents:hover{
+  background-color:#797666;
+  border:none;
+  color:white;
 }
 
 .esriLoadingIcon{
@@ -580,6 +603,7 @@ background-image:none !important;
   font-weight:bold;
   width:100%;
   padding-left:8px;
+  background:url(../images/nps/toolbar_bg.png) repeat-x #545454;
 }
 
 /*Styles for the time slider floating window*/
@@ -621,8 +645,11 @@ background-image:none !important;
   /*-moz-border-radius: 4px;*/
   /*border-radius: 4px;*/
   /*box-shadow: 0 0 0.25em #BBBBBB;*/
+  /*background:url(../images/nps/toolbar_bg.png) repeat-x #545454;*/
   width:32px;
   height: 32px;
+  background-color:#74746A;
+  border:solid 1px #57585A;
 }
 
 .esriSimpleSlider {
