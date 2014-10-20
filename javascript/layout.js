@@ -149,22 +149,39 @@ function createApp() {
     }
 
     //create the links for the top of the application if provided
-    if (configOptions.link1.url && configOptions.link2.url) {
+    if (configOptions.link1.url || configOptions.link2.url) {
         if (configOptions.displaytitle === false) {
             //size the header to fit the links
             dojo.style(dojo.byId("header"), "height", "25px");
         }
         esri.show(dojo.byId('nav'));
-        dojo.create("a", {
-            href: configOptions.link1.url,
-            target: '_blank',
-            innerHTML: configOptions.link1.text
-        }, 'link1List');
-        dojo.create("a", {
-            href: configOptions.link2.url,
-            target: '_blank',
-            innerHTML: configOptions.link2.text
-        }, 'link2List');
+        if (configOptions.link1.url) {
+            var a = dojo.create("a", {
+                href: configOptions.link1.url,
+                target: '_blank',
+                innerHTML: configOptions.link1.text
+            }, 'link1List');
+            if (!configOptions.link1.text) {
+                a.innerHTML = a.hostname
+            }
+        } else {
+            esri.hide(dojo.byId('link1List'));
+        }
+        if (configOptions.link2.url) {
+            var a = dojo.create("a", {
+                href: configOptions.link2.url,
+                target: '_blank',
+                innerHTML: configOptions.link2.text
+            }, 'link2List');
+            if (!configOptions.link2.text) {
+                a.innerHTML = a.hostname
+            }
+        } else {
+            esri.hide(dojo.byId('link2List'));
+        }
+        if (!(configOptions.link1.url && configOptions.link2.url)) {
+            esri.hide(dojo.byId('link-separator'));
+        }
     }
 
 
