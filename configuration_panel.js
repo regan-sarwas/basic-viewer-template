@@ -1,38 +1,14 @@
-{
+var a = {
     "configurationSettings": [{
-        "category": "<b>General</b>",
+        "category": "<b>NPS Banner</b>",
         "fields": [{
-            "type": "webmap",
-            "label": "Select a map"
-        }]
-    }, {
-        "category": "<b>General Settings</b>",
-        "fields": [{
-            "type": "string",
-            "fieldName": "theme",
-            "tooltip": "Color theme to use",
-            "label": "Color Scheme:",
-            "options": [{
-                "label": "Blue",
-                "value": "blue"
-            }, {
-                "label": "Gray",
-                "value": "gray"
-            }, {
-                "label": "Green",
-                "value": "green"
-            }, {
-                "label": "Orange",
-                "value": "orange"
-            }, {
-                "label": "Purple",
-                "value": "purple"
-            }]
-        }, {
             "type": "boolean",
             "fieldName": "displaytitle",
-            "label": "Show Title",
+            "label": "Show NPS Banner",
             "tooltip": ""
+        }, {
+            "type": "paragraph",
+            "value": "Banner will automatically hide when embedded (add &embed=true to URL)."
         }, {
             "type": "string",
             "fieldName": "title",
@@ -41,19 +17,53 @@
             "placeHolder": "Defaults to map name"
         }, {
             "type": "string",
-            "fieldName": "customlogoimage",
-            "tooltip": "Url for image",
-            "placeHolder": "URL to image",
-            "label": "Logo on map:"
+            "fieldName": "subtitle",
+            "label": "Subtitle Text:",
+            "tooltip": "Use 'none' for no subtitle",
+            "placeHolder": "Defaults to map summary"
         }, {
-            "type": "boolean",
-            "fieldName": "displayoverviewmap",
-            "label": "Include Overview Map",
-            "tooltip": ""
+            "type": "string",
+            "fieldName": "organization",
+            "label": "Organization Text:",
+            "tooltip": "Appears on right side of banner",
+            "placeHolder": "Park or Region"
+        }, {
+            "type": "paragraph",
+            "value": "The following hyperlinks, if provided, will appear centered at the bottom of the banner"
+        }, {
+            "type": "string",
+            "fieldName": "link1text",
+            "label": "Text of link #1:",
+            "placeHolder": ""
+        }, {
+            "type": "string",
+            "fieldName": "link1url",
+            "label": "URL of link #1:",
+            "placeHolder": ""
+        }, {
+            "type": "string",
+            "fieldName": "link2text",
+            "label": "Text of link #2:",
+            "placeHolder": ""
+        }, {
+            "type": "string",
+            "fieldName": "link2url",
+            "label": "URL of link #2:",
+            "placeHolder": ""
         }]
     }, {
-        "category": "<b>Menu Items</b>",
+        "category": "<b>Left Panel</b>",
         "fields": [ {
+            "type": "boolean",
+            "fieldName": "leftPanelVisibility",
+            "label": "Show panel on startup"
+        }, {
+            "type": "number",
+            "fieldName": "leftpanewidth",
+            "label": "-  Panel width:",
+            "tooltip": "Width of the left panel in pixels",
+            "constraints" :{min:100,places:0}
+        },{
             "type": "boolean",
             "fieldName": "displaylegend",
             "label": "Legend *",
@@ -62,18 +72,28 @@
             "type": "boolean",
             "fieldName": "displaydetails",
             "label": "Details *",
-            "tooltip": ""
+            "tooltip": "Displays the description of the web map"
+        }, {
+            "type": "string",
+            "fieldName": "description",
+            "label": "-  Details Text:",
+            "tooltip": "Can include limited html formatting",
+            "placeHolder": "Defaults to map description",
+            "stringFieldOption": "richtext"
         }, {
             "type": "boolean",
             "fieldName": "displayeditor",
             "label": "Editor *",
-            "tooltip": "Display editor if web map contains feature service layer"
+            "tooltip": "Display editor if web map contains editable feature service layer"
         }, {
             "type": "boolean",
             "fieldName": "displayeditortoolbar",
-            "label": "Editor Toolbar",
+            "label": "-  Editor Toolbar",
             "tooltip": "Display the optional editor toolbar when the editor is enabled."
-        }, {
+        }]
+    }, {
+        "category": "<b>Toolbar Items</b>",
+        "fields": [ {
             "type": "boolean",
             "fieldName": "displaytimeslider",
             "label": "Time Slider *",
@@ -82,32 +102,37 @@
             "type": "boolean",
             "fieldName": "displayprint",
             "label": "Print",
-            "tooltip": ""
+            "tooltip": "Widget for printing the map"
+        }, {
+            "type": "boolean",
+            "fieldName": "displayprintlegend",
+            "label": "-  Print Legend on Map",
+            "tooltip": "Adds the legend to the map when printing"
         }, {
             "type": "boolean",
             "fieldName": "displaylayerlist",
             "label": "Layer List *",
-            "tooltip": ""
+            "tooltip": "Widget for turning on/off map layers"
         }, {
             "type": "boolean",
             "fieldName": "displaybasemaps",
             "label": "Basemaps",
-            "tooltip": ""
+            "tooltip": "Widget for selecting different basemaps"
         }, {
             "type": "boolean",
             "fieldName": "displaybookmarks",
-            "label": "Bookmarks",
+            "label": "Bookmarks *",
             "tooltip": "Display the read-only bookmarks contained in the web map."
         }, {
             "type": "boolean",
             "fieldName": "displaymeasure",
             "label": "Measure",
-            "tooltip": ""
+            "tooltip": "Widget for measuring distance and area on the map."
         }, {
             "type": "boolean",
             "fieldName": "displayshare",
             "label": "Share",
-            "tooltip": ""
+            "tooltip": "Links to sharing with social media sites"
         }, {
             "type": "boolean",
             "fieldName": "displaysearch",
@@ -116,70 +141,84 @@
         }, {
             "type": "boolean",
             "fieldName": "searchextent",
-            "label": "Search for locations within current extent",
-            "tooltip": "Search for locations only within the current extent"
+            "label": "-  Search in map extents",
+            "tooltip": "Search will be global if not checked"
         }, {
             "type": "paragraph",
-            "value": "* These menu items will appear in the application when the web map has layers that require them."
+            "value": "* These menu items will appear in the application if the web map has layers that support them."
         }]
     },  {
          "category":"<b>Map Widgets</b>",
          "fields":[
-            {
-               "type":"paragraph",
-               "value":"Add one or more of the following widgets to the map."
-            },
-            {
-               "type":"boolean",
-               "fieldName":"home",
-               "label":"Full extent button"
-            },
-            {
-               "type":"boolean",
-               "fieldName":"locate",
-               "label":"Location button"
-            }
-         ]
-      },{
-        "category": "<b>Print Settings</b>",
-        "fields": [{
-            "type": "boolean",
-            "fieldName": "displayprintlegend",
-            "label": "Display Legend on Printout",
-            "tooltip": ""
-        }, {
-            "type": "boolean",
-            "fieldName": "printlayout",
-            "tooltip": "Display all print layouts",
-            "label": "Layout:"
-        }, {
-            "type": "string",
-            "fieldName": "printformat",
-            "tooltip": "Specify the output format",
-            "label": "Format:"
-        }, {
-            "type": "paragraph",
-            "value": "Define print settings for the print service. When Layout is true all available print layout templates will be displayed in the pick list. View the rest services directory for the print service to see a list of valid layout and format options."
-        }]
-    }],
+             {
+                 "type": "boolean",
+                 "fieldName": "displayslider",
+                 "label": "Zoom in/out buttons",
+                 "tooltip": ""
+             },
+             {
+                 "type":"boolean",
+                 "fieldName":"home",
+                 "label":"Full extent button"
+             },
+             {
+                 "type":"boolean",
+                 "fieldName":"locate",
+                 "label":"Location button",
+                 "tooltip": "Used to add the user's location to the map"
+             },
+             {
+                 "type": "boolean",
+                 "fieldName": "displayoverviewmap",
+                 "label": "Overview Map",
+                 "tooltip": ""
+             },
+             {
+                 "type": "boolean",
+                 "fieldName": "displayscalebar",
+                 "label": "Scalebar",
+                 "tooltip": ""
+             },
+             {
+                 "type": "string",
+                 "fieldName": "customlogoimage",
+                 "label": "Logo on map:",
+                 "placeHolder": "URL to image:",
+                 "tooltip": "Image appears in lower-right corner of map if provided"
+             },
+             {
+                 "type": "string",
+                 "fieldName": "customlogolink",
+                 "label": "Destination for logo click:",
+                 "placeHolder": "URL to website",
+                 "tooltip": "Where should the user go when they click the image"
+             }]
+      }],
     "values": {
-        "theme": "gray",
-        "searchextent": false,
-        "displaymeasure": true,
-        "displayshare": true,
-        "displayoverviewmap": true,
-        "displayeditor": true,
-        "displayeditortoolbar": false,
-        "displaytimeslider": true,
-        "displayprintlegend": false,
-        "displayprint": true,
-        "displaysearch": true,
+        "displaytitle": true,
+
+        "leftPanelVisibility": true,
+        "leftpanewidth": 300,
         "displaylegend": true,
         "displaydetails": true,
+        "displayeditor": false,
+        "displayeditortoolbar": false,
+
+        "displaytimeslider": false,
+        "displayprint": true,
+        "displayprintlegend": true,
         "displaylayerlist": true,
         "displaybasemaps": true,
+        "displaybookmarks": true,
+        "displaymeasure": true,
+        "displayshare": true,
+        "displaysearch": false,
+        "searchextent": false,
+
+        "displayslider":true,
         "home": true,
-        "locate": true,
-        "printlayout": false
+        "locate": false,
+        "displayoverviewmap": true,
+        "displayscalebar": true
     }
 }
