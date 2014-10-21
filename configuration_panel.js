@@ -1,20 +1,14 @@
-{
+var a = {
     "configurationSettings": [{
-        "category": "<b>General</b>",
-        "fields": [{
-            "type": "webmap",
-            "label": "Select a map"
-        }]
-    }, {
         "category": "<b>NPS Banner</b>",
         "fields": [{
             "type": "boolean",
             "fieldName": "displaytitle",
-            "label": "Show NPS Banner *",
+            "label": "Show NPS Banner",
             "tooltip": ""
         }, {
             "type": "paragraph",
-            "value": "* Banner will automatically be hidden when this app is embedded in another web page."
+            "value": "Banner will automatically hide when embedded (add &embed=true to URL)."
         }, {
             "type": "string",
             "fieldName": "title",
@@ -66,8 +60,8 @@
         }, {
             "type": "number",
             "fieldName": "leftpanewidth",
-            "label": "Width of left panel (pixels)",
-            "tooltip": "Displays the description of the web map",
+            "label": "-  Panel width:",
+            "tooltip": "Width of the left panel in pixels",
             "constraints" :{min:100,places:0}
         },{
             "type": "boolean",
@@ -82,9 +76,10 @@
         }, {
             "type": "string",
             "fieldName": "description",
-            "label": "Details Text",
+            "label": "-  Details Text:",
             "tooltip": "Can include limited html formatting",
-            "placeHolder": "Defaults to the description of the web map"
+            "placeHolder": "Defaults to map description",
+            "stringFieldOption": "richtext"
         }, {
             "type": "boolean",
             "fieldName": "displayeditor",
@@ -93,11 +88,8 @@
         }, {
             "type": "boolean",
             "fieldName": "displayeditortoolbar",
-            "label": "Editor Toolbar",
+            "label": "-  Editor Toolbar",
             "tooltip": "Display the optional editor toolbar when the editor is enabled."
-        }, {
-            "type": "paragraph",
-            "value": "* These will only appear in the application if the web map has data to support them."
         }]
     }, {
         "category": "<b>Toolbar Items</b>",
@@ -113,6 +105,11 @@
             "tooltip": "Widget for printing the map"
         }, {
             "type": "boolean",
+            "fieldName": "displayprintlegend",
+            "label": "-  Print Legend on Map",
+            "tooltip": "Adds the legend to the map when printing"
+        }, {
+            "type": "boolean",
             "fieldName": "displaylayerlist",
             "label": "Layer List *",
             "tooltip": "Widget for turning on/off map layers"
@@ -124,7 +121,7 @@
         }, {
             "type": "boolean",
             "fieldName": "displaybookmarks",
-            "label": "Bookmarks",
+            "label": "Bookmarks *",
             "tooltip": "Display the read-only bookmarks contained in the web map."
         }, {
             "type": "boolean",
@@ -144,7 +141,7 @@
         }, {
             "type": "boolean",
             "fieldName": "searchextent",
-            "label": "Search in map extents",
+            "label": "-  Search in map extents",
             "tooltip": "Search will be global if not checked"
         }, {
             "type": "paragraph",
@@ -160,12 +157,6 @@
                  "tooltip": ""
              },
              {
-                 "type": "boolean",
-                 "fieldName": "constrainmapextent",
-                 "label": "Constrain Map Extents",
-                 "tooltip": "When true users will not be able to pan/zoom outside the initial extent."
-             },
-             {
                  "type":"boolean",
                  "fieldName":"home",
                  "label":"Full extent button"
@@ -179,7 +170,7 @@
              {
                  "type": "boolean",
                  "fieldName": "displayoverviewmap",
-                 "label": "Include Overview Map",
+                 "label": "Overview Map",
                  "tooltip": ""
              },
              {
@@ -202,69 +193,32 @@
                  "placeHolder": "URL to website",
                  "tooltip": "Where should the user go when they click the image"
              }]
-      },{
-        "category": "<b>Print Settings</b>",
-        "fields": [{
-            "type": "boolean",
-            "fieldName": "displayprintlegend",
-            "label": "Display Legend on Printout",
-            "tooltip": ""
-        }, {
-            "type": "boolean",
-            "fieldName": "printlayout",
-            "tooltip": "Display all print layouts",
-            "label": "Layout"
-        }, {
-            "type": "string",
-            "fieldName": "printformat",
-            "tooltip": "Specify the output format",
-            "label": "Format:"
-        },
-//        {
-//            "type": "string",
-//            "fieldName": "owner",
-//            "tooltip": "Specify an owner for the app - used by the print option",
-//            "label": "Owner:",
-//            "placeHolder": "Defaults to map owner"
-//        },
-            {
-                "type": "paragraph",
-                "value": "Define print settings for the print service. When Layout is true all available print layout templates will be displayed in the pick list. View the rest services directory for the print service to see a list of valid layout and format options."
-            }]
       }],
     "values": {
-        //Banner
         "displaytitle": true,
 
-        //Left Panel
         "leftPanelVisibility": true,
         "leftpanewidth": 300,
         "displaylegend": true,
         "displaydetails": true,
-        "displayeditor": true,
+        "displayeditor": false,
         "displayeditortoolbar": false,
 
-        //Toolbar Widgets
         "displaytimeslider": false,
-        "displayprint": false,
+        "displayprint": true,
+        "displayprintlegend": true,
         "displaylayerlist": true,
         "displaybasemaps": true,
         "displaybookmarks": true,
         "displaymeasure": true,
-        "displayshare": false,
-        "displaysearch": true,
-        "searchextent": true,
+        "displayshare": true,
+        "displaysearch": false,
+        "searchextent": false,
 
-        //Map Widgets
         "displayslider":true,
-        "constrainmapextent": false,
         "home": true,
         "locate": false,
-        "displayoverviewmap": false,
-        "displayscalebar": false,
-
-        //Print Settings
-        "displayprintlegend": true,
-        "printlayout": false
+        "displayoverviewmap": true,
+        "displayscalebar": true
     }
 }
