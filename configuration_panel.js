@@ -130,11 +130,6 @@ var a = {
             "tooltip": "Widget for measuring distance and area on the map."
         }, {
             "type": "boolean",
-            "fieldName": "displayshare",
-            "label": "Share",
-            "tooltip": "Links to sharing with social media sites"
-        }, {
-            "type": "boolean",
             "fieldName": "displaysearch",
             "label": "Search",
             "tooltip": ""
