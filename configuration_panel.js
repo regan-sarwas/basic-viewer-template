@@ -7,9 +7,6 @@ var a = {
             "label": "Show NPS Banner",
             "tooltip": ""
         }, {
-            "type": "paragraph",
-            "value": "Banner will automatically hide when embedded (add &embed=true to URL)."
-        }, {
             "type": "string",
             "fieldName": "title",
             "label": "Title Text:",
@@ -29,7 +26,7 @@ var a = {
             "placeHolder": "Park or Region"
         }, {
             "type": "paragraph",
-            "value": "The following hyperlinks, if provided, will appear centered at the bottom of the banner"
+            "value": "The following hyperlinks, if provided, will appear in the banner"
         }, {
             "type": "string",
             "fieldName": "link1text",
@@ -50,46 +47,57 @@ var a = {
             "fieldName": "link2url",
             "label": "URL of link #2:",
             "placeHolder": ""
+        }, {
+            "type": "paragraph",
+            "value": ""
         }]
     }, {
         "category": "<b>Left Panel</b>",
         "fields": [ {
-            "type": "boolean",
-            "fieldName": "leftPanelVisibility",
-            "label": "Show panel on startup"
+            "type": "paragraph",
+            "value": "The left panel toggles between the following selected content when the web map has data that supports that content.  If nothing is selected/supported, the left panel is unavailable."
         }, {
-            "type": "number",
-            "fieldName": "leftpanewidth",
-            "label": "-  Panel width:",
-            "tooltip": "Width of the left panel in pixels",
-            "constraints" :{min:100,places:0}
-        },{
             "type": "boolean",
             "fieldName": "displaylegend",
-            "label": "Legend *",
+            "label": "Legend",
             "tooltip": ""
         }, {
             "type": "boolean",
             "fieldName": "displaydetails",
-            "label": "Details *",
-            "tooltip": "Displays the description of the web map"
-        }, {
-            "type": "string",
-            "fieldName": "description",
-            "label": "-  Details Text:",
-            "tooltip": "Can include limited html formatting",
-            "placeHolder": "Defaults to map description",
-            "stringFieldOption": "richtext"
+            "label": "Details",
+            "tooltip": "Description of the web map, or text below"
         }, {
             "type": "boolean",
             "fieldName": "displayeditor",
-            "label": "Editor *",
+            "label": "Editor",
             "tooltip": "Display editor if web map contains editable feature service layer"
+        }, {
+            "type": "paragraph",
+            "value": "Use the following text to replace the map description when showing Details"
+        }, {
+            "type": "string",
+            "fieldName": "description",
+            "label": "Details Text:",
+            "stringFieldOption": "richtext"
+        }, {
+            "type": "boolean",
+            "fieldName": "leftPanelVisibility",
+            "label": "Show panel on startup",
+            "tooltip": "If unchecked the panel will start out hidden"
+        }, {
+            "type": "number",
+            "fieldName": "leftpanewidth",
+            "label": "Panel width:",
+            "tooltip": "Width of the left panel in pixels",
+            "constraints" :{min:100,places:0}
         }, {
             "type": "boolean",
             "fieldName": "displayeditortoolbar",
-            "label": "-  Editor Toolbar",
+            "label": "Show Editor Toolbar",
             "tooltip": "Display the optional editor toolbar when the editor is enabled."
+        }, {
+            "type": "paragraph",
+            "value": ""
         }]
     }, {
         "category": "<b>Toolbar Items</b>",
@@ -159,7 +167,7 @@ var a = {
              {
                  "type":"boolean",
                  "fieldName":"locate",
-                 "label":"Location button",
+                 "label":"Locate button",
                  "tooltip": "Used to add the user's location to the map"
              },
              {
