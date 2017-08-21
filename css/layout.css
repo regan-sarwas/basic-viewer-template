@@ -67,13 +67,13 @@ body {
 }
 
 #webmapTitle{
-  font-family:"gill sans",helvetica,arial,sans-serif;
+  font-family: arial,helvetica,arial,sans-serif;
   color: #333;
   font-size:32px;
   max-width:72%;
   float:left;
-  white-space: nowrap;  
-  overflow: hidden;  
+  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow:ellipsis;
   padding-top:0px;
@@ -205,7 +205,10 @@ body {
 .dijitContentPane{
    overflow:visible;
 }
-
+#leftPaneHeader{
+  border:none !important;
+  background-color: inherit !important;
+}
 #legendPanel{
 /*width:100%;*/
 }
@@ -313,7 +316,7 @@ body {
 }
 
 #detailButton:hover{
-  background-color:#797666; 
+  background-color:#797666;
   border:none;
   color:white;
 }
@@ -502,14 +505,14 @@ body {
   padding:5px 5px !important;
   font-family:'frutiger', sans-serif;
  }
- 
+
 .dijitMenuItem{
   padding:10px 10px !important;
 }
 
 /*change the default arrow used by the basemap dropdown button from black to gray*/
 .claro .dijitArrowButtonInner {
-  background-image: url("../images/buttonArrows.png"); 
+  background-image: url("../images/buttonArrows.png");
   background-position:-152px 53%;
 }
 
@@ -576,7 +579,7 @@ body {
 }
 
 /*Border for the overview map*/
-.esriOverviewMap.ovwTR .ovwContainer { 
+.esriOverviewMap.ovwTR .ovwContainer {
   border-bottom: 2px solid #999 !important;
   border-left: 2px solid #999 !important;
   -webkit-border-bottom-left-radius: 4px !important;
@@ -594,9 +597,9 @@ body {
    border: solid 1px #999;
    border-radius:3px;
   -moz-border-radius:3px;
-  -webkit-border-radius: 3px; 
+  -webkit-border-radius: 3px;
   padding:0px !important;
-} 
+}
 
 .dojoxFloatingPaneContent{
   font-family:"frutiger", sans-serif;
@@ -625,10 +628,10 @@ body {
    border: solid 1px #999;
    border-radius:3px;
   -moz-border-radius:3px;
-  -webkit-border-radius: 3px; 
+  -webkit-border-radius: 3px;
   padding:0px !important;
 
-} 
+}
 .timeLabel{
    text-align:center;
    padding:20px;
@@ -724,11 +727,11 @@ body {
 }
 
 .esriPopup .pointer.bottom, .esriPopup .outerPointer.left, .esriPopup .outerPointer.right{
-  background:rgb(231,231,231) !important;	
+  background:rgb(231,231,231) !important;
 }
 
 .esriPopup .pointer.top{
-  background:#908D7C !important;	
+  background:#908D7C !important;
 }
 
 .esriPopup .contentPane {

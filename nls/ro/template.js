@@ -1,16 +1,16 @@
 ﻿define(
-({
-  viewer:{
-    main:{
+   ({
+  viewer: {
+    main: {
       scaleBarUnits: "metric" //"english (for miles) or "metric" (for km) - don't translate.
     },
-    errors:{
-      createMap: "Imposibil de creat harta",
+    errors: {
+      createMap: "Nu se poate crea harta",
       bitly: 'O cheie bitly este utilizată pentru scurtarea URL-ului în vederea partajării. Vizualizaţi fişierul readme pentru detalii despre crearea şi utilizarea unei chei bitly',
       general: "Eroare"
     }
   },
-  tools:{
+  tools: {
     basemap: {
     title: "Schimbare hartă fundal",
     label: "Hartă fundal"
@@ -28,15 +28,15 @@
     share: {
     title: "Partajare hartă",
     label: "Partajare",
-    menu:{
-      facebook:{
+    menu: {
+      facebook: {
         label: "Facebook"
        },
-      twitter:{
+      twitter: {
         label: "Twitter"
       },
-      email:{
-        label: "Email",
+      email: {
+        label: "E-mail",
         message: "Consultare această hartă"
       }    
     }
@@ -98,8 +98,8 @@
       }
     }
   },
-  panel:{
-    close:{
+  panel: {
+    close: {
       title: "Închidere panou",
       label: "Închidere"
     }
