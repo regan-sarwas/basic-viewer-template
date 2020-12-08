@@ -1,4 +1,12 @@
 
+NPS Version of the Esri Basic Map Viewer
+========================================
+In the early days of ArcGIS online, there were very few options for embeding a configurable map viewer in a web page.
+This was a early solution provided by esri that was customized by AKRO with an NPS look and feel.  It is not 508
+compliant, and quickly became obsoete by better products offered by esri.
+
+Esri's original readme file which provide instructions for building and deploying is provided below.
+
 Classic Viewer
 =====================
 Note: An updated version of this application has been created that contains much of the funcationality of this template but with an updated look and feel. We will continue to fix bugs in this version but all new development efforts will be in the new application. Visit the new template [repo](https://github.com/Esri/map-tools-template) for more details. 
